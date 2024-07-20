@@ -153,3 +153,81 @@
     docker ps --help
 
 ![Alt text](m2_images/help-command.png)
+
+#### Stoping and Restarting a container
+
+    # To start a stoped container
+    docker ps -a
+    docker start <conainer name>
+    docker stop <conainer name>
+
+#### Attached (attach) and Detached Containers (-d)
+
+    docker run -p 8000:80 -d <image id>
+    # To attach again run:
+    docker attach <container name>
+    # To fetch the logs that were printed by a container run:
+    docker logs <container-name>
+    # To follow listening on that container
+    docker logs -f <container-name>
+
+#### M2.1_Entering_Interactive_Mode
+
+![Alt text](m2_images/interactive-image.png)
+
+    # Building a docker image
+    docker build
+    # Running a container using a docker image using interative mode
+    docker run -it <image id>
+    # To start a container again
+    docker start -a -i <image id>
+
+![Alt text](m2_images/interactive-terminal.png)
+
+#### Deleting Images and Containers
+
+    # Check for running containers
+    docker ps
+    docker stop <container name>
+    # To delete a container 
+    docker rm <container name1> <container name2> ...
+    # To remove all containers at once
+    docker container prune
+
+![Alt text](m2_images/delete-containers.png)
+
+    # To list images
+    docker images
+
+![Alt text](m2_images/list-images.png)
+
+    # To remove an image
+    # remove the container related to the image
+    docker rmi <image id>
+    # To remove all images
+    docker rmi <image id-1> <image id-2> ...
+    # OR
+    docker image prune
+
+![Alt text](m2_images/delete-images.png)
+
+#### Remmoving stoped container automatically (--rm)
+
+    docker run -p 3000:80 -d --rm <image id>
+
+![Alt text](m2_images/delete-automatically.png)
+
+#### Inspect an Image
+
+    docker image inspect <image id>
+
+#### Copying files Into and From a container (cp)
+
+    docker cp source/. <container-name>:/test
+    docker cp <container-name>:/test/test.txt source 
+
+#### Naming and Tagging Containers and Images
+
+![Alt text](m2_images/naming-container.png)
+
+
