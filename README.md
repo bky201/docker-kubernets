@@ -226,8 +226,24 @@
     docker cp source/. <container-name>:/test
     docker cp <container-name>:/test/test.txt source 
 
-#### Naming and Tagging Containers and Images
+#### Naming and Tagging Containers 
 
 ![Alt text](m2_images/naming-container.png)
 
 
+#### Naming and Tagging Images
+
+![Alt text](m2_images/naming-image.png)
+
+    # To remove all images inluding Tagged images:
+    docker image prune -a
+
+#### Sharing images via Docker Hub 
+
+![Alt text](m2_images/docker-push1.png)
+
+![Alt text](m2_images/docker-push2.png)
+
+#### Pulling and using Shared images
+
+![Alt text](m2_images/pulling-images.png)
