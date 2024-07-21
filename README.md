@@ -82,13 +82,13 @@
 
 ## M1_Starting_Setup
 ### Creating Docker Image
-![Alt text](m1_images/docker-image.png)
+![Alt text](images/m1_images/docker-image.png)
 
 
 #### Build the docker image with the following command
     docker build .
 
-![Alt text](m1_images/successful-build-docker.png)
+![Alt text](images/m1_images/successful-build-docker.png)
 
 #### Run a container using the image ID
 
@@ -96,13 +96,13 @@
 
 #### A running web server on localhost:3000
 
-![Alt text](m1_images/web-server.png)
+![Alt text](images/m1_images/web-server.png)
 
 #### To stop the current docker container on new terminal run:
 
     docker ps
 
-![Alt text](m1_images/docker-ps.png)
+![Alt text](images/m1_images/docker-ps.png)
 
     # docker stop <NAME>
     docker stop wizardly_albattani
@@ -113,23 +113,23 @@
 
     docker run node
 
-![Alt text](m2_images/pre-built-image.png)
+![Alt text](images/m2_images/pre-built-image.png)
 
 #### List conatiners 
 
     docker ps -a
 
-![Alt text](m2_images/list-containers.png)
+![Alt text](images/m2_images/list-containers.png)
 
 ### Docker Container 2
 
-![Alt text](m2_images/goal-image.png)
+![Alt text](images/m2_images/goal-image.png)
 
 #### Create an Image using Dockerfile 
 
     docker build .
 
-![Alt text](m2_images/build-image.png)
+![Alt text](images/m2_images/build-image.png)
 
 #### Run a container using this Docker Image
 
@@ -138,11 +138,11 @@
     docker ps
     docker stop <Name>
 
-![Alt text](m2_images/web-server.png)
+![Alt text](images/m2_images/web-server.png)
 
 ### Image Layers are only build again when the previous layer has been modified 
 
-![Alt text](m2_images/image-layers.png)
+![Alt text](images/m2_images/image-layers.png)
 
 #### For any change on the source code run:
 
@@ -152,7 +152,7 @@
 
     docker ps --help
 
-![Alt text](m2_images/help-command.png)
+![Alt text](images/m2_images/help-command.png)
 
 #### Stoping and Restarting a container
 
@@ -173,7 +173,7 @@
 
 #### M2.1_Entering_Interactive_Mode
 
-![Alt text](m2_images/interactive-image.png)
+![Alt text](images/m2_images/interactive-image.png)
 
     # Building a docker image
     docker build
@@ -182,7 +182,7 @@
     # To start a container again
     docker start -a -i <image id>
 
-![Alt text](m2_images/interactive-terminal.png)
+![Alt text](images/m2_images/interactive-terminal.png)
 
 #### Deleting Images and Containers
 
@@ -194,12 +194,12 @@
     # To remove all containers at once
     docker container prune
 
-![Alt text](m2_images/delete-containers.png)
+![Alt text](images/m2_images/delete-containers.png)
 
     # To list images
     docker images
 
-![Alt text](m2_images/list-images.png)
+![Alt text](images/m2_images/list-images.png)
 
     # To remove an image
     # remove the container related to the image
@@ -209,13 +209,13 @@
     # OR
     docker image prune
 
-![Alt text](m2_images/delete-images.png)
+![Alt text](images/m2_images/delete-images.png)
 
 #### Remmoving stoped container automatically (--rm)
 
     docker run -p 3000:80 -d --rm <image id>
 
-![Alt text](m2_images/delete-automatically.png)
+![Alt text](images/m2_images/delete-automatically.png)
 
 #### Inspect an Image
 
@@ -228,70 +228,70 @@
 
 #### Naming and Tagging Containers 
 
-![Alt text](m2_images/naming-container.png)
+![Alt text](images/m2_images/naming-container.png)
 
 
 #### Naming and Tagging Images
 
-![Alt text](m2_images/naming-image.png)
+![Alt text](images/m2_images/naming-image.png)
 
     # To remove all images inluding Tagged images:
     docker image prune -a
 
 #### Sharing images via Docker Hub 
 
-![Alt text](m2_images/docker-push1.png)
+![Alt text](images/m2_images/docker-push1.png)
 
-![Alt text](m2_images/docker-push2.png)
+![Alt text](images/m2_images/docker-push2.png)
 
 #### Pulling and using Shared images
 
-![Alt text](m2_images/pulling-images.png)
+![Alt text](images/m2_images/pulling-images.png)
 
 ## M3_Managing_data_and_working_with_volumes
 
-![Alt text](m3_images/data-image.png)
+![Alt text](images/m3_images/data-image.png)
 
 #### Create an image
 
-![Alt text](m3_images/feedback-image.png)
+![Alt text](images/m3_images/feedback-image.png)
 
 #### Container 
 
-![Alt text](m3_images/feedback-container.png)
+![Alt text](images/m3_images/feedback-container.png)
 
 
-![Alt text](m3_images/feedback-app.png)
+![Alt text](images/m3_images/feedback-app.png)
 
 ### Volume
 
 #### Create a docker image with volume
 
-![Alt text](m3_images/feedback-volume-image.png)
+![Alt text](images/m3_images/feedback-volume-image.png)
 
 #### Create a docker container with volume
 
-![Alt text](m3_images/feedback-volume-container.png)
+![Alt text](images/m3_images/feedback-volume-container.png)
 
 #### Updating the server.js file for volumes to work
 
-![Alt text](m3_images/update1.png)
+![Alt text](images/m3_images/update1.png)
 
-![Alt text](m3_images/update2.png)
+![Alt text](images/m3_images/update2.png)
 
 #### Anonymous volumes
 
-![Alt text](m3_images/anonymous-volume.png)
+![Alt text](images/m3_images/anonymous-volume.png)
 
 #### Named volumes dockerfile
 
-![Alt text](m3_images/named-volume-dockefile.png)
+![Alt text](images/m3_images/named-volume-dockefile.png)
 
 #### Create a docker container with a named volume
 
-![Alt text](m3_images/named-volume-container.png)
+![Alt text](images/m3_images/named-volume-container.png)
 
-![Alt text](m3_images/stop-named-volume.png)
+![Alt text](images/m3_images/stop-named-volume.png)
 
 #### Remove anonymous volume
 
@@ -305,21 +305,22 @@
 
 #### Before modifying host machine file
 
-![Alt text](m3_images/app1.png)
+![Alt text](images/m3_images/app1.png)
 
 #### After modifying host machine file
 
-![Alt text](m3_images/app2.png)
+![Alt text](images/m3_images/app2.png)
+
 
 ### Using Nodemon in a container 
 #### Add the "scripts" and "devDependencies" in package.json
 
-![Alt text](m3_images/scripts-devdependencies.png)
+![Alt text](images/m3_images/scripts-devdependencies.png)
 
 #### Update Docker file
 
-![Alt text](m3_images/npm-dockerfile.png)
+![Alt text](images/m3_images/npm-dockerfile.png)
 
-![Alt text](m3_images/serverjs-updates.png)
+![Alt text](images/m3_images/serverjs-updates.png)
 
 
