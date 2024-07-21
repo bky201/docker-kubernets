@@ -247,3 +247,54 @@
 #### Pulling and using Shared images
 
 ![Alt text](m2_images/pulling-images.png)
+
+## M3_Managing_data_and_working_with_volumes
+
+![Alt text](m3_images/data-image.png)
+
+#### Create an image
+
+![Alt text](m3_images/feedback-image.png)
+
+#### Container 
+
+![Alt text](m3_images/feedback-container.png)
+
+
+![Alt text](m3_images/feedback-app.png)
+
+### Volume
+
+#### Create a docker image with volume
+
+![Alt text](m3_images/feedback-volume-image.png)
+
+#### Create a docker container with volume
+
+![Alt text](m3_images/feedback-volume-container.png)
+
+#### Updating the server.js file for volumes to work
+
+![Alt text](m3_images/update1.png)
+
+![Alt text](m3_images/update2.png)
+
+#### Anonymous volumes
+
+![Alt text](m3_images/anonymous-volume.png)
+
+#### Named volumes dockerfile
+
+![Alt text](m3_images/named-volume-dockefile.png)
+
+#### Create a docker container with a named volume
+
+![Alt text](m3_images/named-volume-container.png)
+
+![Alt text](m3_images/stop-named-volume.png)
+
+#### Remove anonymous volume
+
+    docker volume rm <volume name>
+    docker volume prune
+    
