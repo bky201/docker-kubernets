@@ -297,4 +297,29 @@
 
     docker volume rm <volume name>
     docker volume prune
-    
+
+
+#### Bind Mounts
+
+    docker run -d -p 3000:80 --rm --name feedback-app -v feedback:/app/feedback -v "$(pwd):/app:ro" -v /app/node_modules feedback-node:volumes
+
+#### Before modifying host machine file
+
+![Alt text](m3_images/app1.png)
+
+#### After modifying host machine file
+
+![Alt text](m3_images/app2.png)
+
+### Using Nodemon in a container 
+#### Add the "scripts" and "devDependencies" in package.json
+
+![Alt text](m3_images/scripts-devdependencies.png)
+
+#### Update Docker file
+
+![Alt text](m3_images/npm-dockerfile.png)
+
+![Alt text](m3_images/serverjs-updates.png)
+
+
