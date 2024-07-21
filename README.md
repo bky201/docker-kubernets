@@ -323,4 +323,69 @@
 
 ![Alt text](images/m3_images/serverjs-updates.png)
 
+## M4_Containers_and_Networking
+
+#### Creating_a_Container_and_Communicating_to_Web(WW)
+
+#### Running mongodb on host machine
+
+![Alt text](images/m4_images/mongodb-local.png)
+
+#### Connect mongodb (host.docker.internal)
+
+![Alt text](images/m4_images/connect-mongo.png)
+
+#### Create docker image
+
+![Alt text](images/m4_images/build-docker-image.png)
+
+#### Create docker container
+
+![Alt text](images/m4_images/build-docker-container.png)
+
+#### Make container to host (mongodb) request 
+
+![Alt text](images/m4_images/get-favorites.png)
+
+#### Container to container communication 
+#### Create mongodb container 
+
+![Alt text](images/m4_images/mongo-container.png)
+
+#### Set mongodb container IPAddress to node application
+
+![Alt text](images/m4_images/IPAddress.png)
+
+#### Running app.js container 
+
+![Alt text](images/m4_images/node-app-container.png)
+
+#### Container to container communication
+
+![Alt text](images/m4_images/container-container-communication.png)
+
+#### Creating Container Network
+
+![Alt text](images/m4_images/docker-network.png)
+
+#### Update app.js  mongoose connectiom with new mongodb container name (mongodb)
+
+![Alt text](images/m4_images/mongodb-network.png)
+
+#### Build docker image 
+
+![Alt text](images/m4_images/build-network-image.png)
+
+#### Run docker container using this image
+
+![Alt text](images/m4_images/build-network-container.png)
+
+
+
+
+
+
+
+
+
 
