@@ -534,6 +534,35 @@
 
 ![Alt text](images/m5_images/frontend-source-code.png)
 
+## Docker-Compose
+
+### Installing Docker Compose on Linux
+
+    1. sudo curl -L "https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+    2. sudo chmod +x /usr/local/bin/docker-compose
+    3. sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+    4. docker-compose --version
+
+#### To start all docker-compose services
+
+![Alt text](images/m6_images/docker-compose-up.png)
+
+#### To stop docker-compose 
+
+![Alt text](images/m6_images/docker-compose-down.png)
+
+#### Configure docker-compose file
+
+![Alt text](images/m6_images/docker-compose-file.png)
+
+#### Configuring frontend container on docker-compose file
+
+![Alt text](images/m6_images/docker-compose-frontend.png)
+
+![Alt text](images/m6_images/running-docker-compose.png)
+
+
+
 
 
 
