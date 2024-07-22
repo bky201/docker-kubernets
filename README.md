@@ -525,7 +525,7 @@
 #### Live Source Code Update for React Container
 
     1. Bind Mount volume to update local host script
-    -v $(pwd):/app/scr
+    -v $(pwd)/scr:/app/scr
     2. Add File sharing path for docker desktop
 
 ![Alt text](images/m5_images/frontend-container-bindmount.png)
