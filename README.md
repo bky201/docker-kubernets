@@ -380,6 +380,165 @@
 
 ![Alt text](images/m4_images/build-network-container.png)
 
+## M5_Build_Multi_Container_Applications_with_docker
+
+#### Creating docker container for mongodb
+
+![Alt text](images/m5_images/mongodb-container.png)
+
+#### Creating docker container for backend
+
+- Backend Dockerfile
+
+![Alt text](images/m5_images/backend-dockerfile.png)
+
+- Backend docker image
+
+![Alt text](images/m5_images/backend-dockerfile.png)
+
+- Backend Docker Container
+
+- Update mongodb connection in app.js from "localhost" to "host.docker.internal" and rebuild the docker image
+
+![Alt text](images/m5_images/mongodb1.png)
+
+![Alt text](images/m5_images/mongodb2.png)
+
+- Rebuild backend docker image
+
+![Alt text](images/m5_images/rebuild-backend-image.png)
+
+- Build backend docker container
+
+![Alt text](images/m5_images/backend-container.png)
+
+- Expose the port to communicate to frontend run on local host
+
+![Alt text](images/m5_images/backend-container-frontend.png)
+
+#### Creating docker container for frontend
+
+- Frontend Dockerfile
+
+![Alt text](images/m5_images/frontend-dockerfile.png)
+
+- Frontend docker image
+
+![Alt text](images/m5_images/frontend-image.png)
+
+- Build frontend docker container 
+
+![Alt text](images/m5_images/frontend-container.png)
+
+- Testing web app
+
+![Alt text](images/m5_images/test-web-app.png)
+
+#### Adding Docker Network (Cross Container Communication)
+
+![Alt text](images/m5_images/docker-network.png)
+
+- Create mongodb docker container within a network
+
+![Alt text](images/m5_images/mongodb-container-network.png)
+
+- Backend Docker Container with a network
+
+- Update mongodb connection in app.js from "host.docker.internal" to container name of the database within the network and rebuild the docker image
+
+![Alt text](images/m5_images/mongodb2.png)
+
+![Alt text](images/m5_images/mongodb3.png)
+
+- rebuild backend docker image
+
+![Alt text](images/m5_images/rebuild-backend-image.png)
+
+- Build backend docker container within a network
+
+![Alt text](images/m5_images/backend-container-network.png)
+
+#### Creating docker container for frontend No need of network
+
+- Frontend Dockerfile
+
+![Alt text](images/m5_images/frontend-dockerfile.png)
+
+- Frontend docker image
+
+![Alt text](images/m5_images/frontend-image.png)
+
+- Build frontend docker container 
+
+![Alt text](images/m5_images/frontend-container.png)
+
+- Testing web app
+
+![Alt text](images/m5_images/test-web-app.png)
+
+### Adding Data Persistence to Mongodb with volumes and limited access
+
+![Alt text](images/m5_images/mongodb-container-volume.png)
+
+#### Mongodb Limit Access
+
+![Alt text](images/m5_images/mongo-limit-access.png)
+
+![Alt text](images/m5_images/failed-limit-access.png)
+
+- To fix this error update mongodb connection in the app.js
+
+![Alt text](images/m5_images/mongodb-credentials.png)
+
+#### Backend Volumes and Bind Mounts  
+
+    1. Bind Mount volume to update local host script
+    -v $(pwd):/app
+    2. Named volume for logs file persist data at the Nodejs container
+    -v logs:/app/logs 
+    3. Anonymous volume to protect missing dependencies for node module
+    -v /app/node_modules
+    4. Add File sharing path for docker desktop 
+    5. Delete package-lock.json
+    6. Add "devDependencies" with "nodemon" package in package.json file
+    7. Add ("start": "nodemon app.js") script to the script section in package.json
+    8. In the docker file update [ "node", "app.js" ] to [ "npm", "start" ]
+    9. Rebuild docker image
+
+![Alt text](images/m5_images/backend-bind-mount.png)
+
+#### Verifying by updating app.js script
+
+![Alt text](images/m5_images/verifying-backend-connection.png)
+![Alt text](images/m5_images/verifying-backend-connection1.png)
+
+#### Create environment variables for credentials
+
+![Alt text](images/m5_images/dockerfile-environment-variables.png)
+
+![Alt text](images/m5_images/mongodb-environment-variable.png)
+
+- Running the backend using only username
+
+![Alt text](images/m5_images/backend-username.png)
+
+#### Live Source Code Update for React Container
+
+    1. Bind Mount volume to update local host script
+    -v $(pwd):/app/scr
+    2. Add File sharing path for docker desktop
+
+![Alt text](images/m5_images/frontend-container-bindmount.png)
+
+- Modifying frontend source code web page updates immediately
+
+![Alt text](images/m5_images/frontend-source-code.png)
+
+
+
+
+
+
 
 
 
