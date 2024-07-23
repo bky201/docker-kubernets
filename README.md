@@ -561,6 +561,101 @@
 
 ![Alt text](images/m6_images/running-docker-compose.png)
 
+## M9_Deploying_Docker_Container
+
+1. Create and launch EC2 instance, VPC and security group
+2. Configure security group to expose all required ports to WWW
+3. Connect to instance (SSH), install Docker and run container.docker
+
+### Deploy to AWS EC2 (via SSH)
+
+1. Create and EC2 instance
+
+![Alt text](images/m9_images/launch-instance.png)
+
+2. Choose an Amazone Machine Image(AMI)
+
+![Alt text](images/m9_images/ami-image.png)
+
+3. choose an instance type (Free tier)
+
+![Alt text](images/m9_images/instance-type.png)
+
+4. Configure Instance Details and set a vpc
+
+![Alt text](images/m9_images/network-vpc.png)
+
+5. click review and launch
+
+![Alt text](images/m9_images/review-and-launch.png)
+
+6. click launch
+
+7. select an existing key pair or Create a new key pair and download it
+
+![Alt text](images/m9_images/key-pair.png)
+
+8. click launch
+
+9. Verify instance is up and running
+
+![Alt text](images/m9_images/instance-state.png)
+
+10. Click connect and choose a Standalone ssh client
+
+![Alt text](images/m9_images/standalone-ssh-client.png)
+
+11. To access the instance follow the given steps
+
+#### Install Docker on a virtual EC2 instance
+
+    sudo yum update -y
+    sudo yum -y install docker
+ 
+    sudo service docker start
+ 
+    sudo usermod -a -G docker ec2-user
+
+    # Make sure to log out + back in after running these commands. Once you logged back in, run this command:
+
+    sudo systemctl enable docker
+
+    # check whether Docker is available by running:
+
+    docker version
+
+#### Pushing our local image to cloud
+
+1. log in to docker hub and create a repository
+
+        <docker-hub/repository-name>
+
+2. Create Docker image locally 
+
+        docker build -t <image-name> .
+    
+3. Push to docker-hub by renaming the image
+
+        docker tag <image-name> <docker-hub/repository-name>
+
+        docker login
+
+        docker push <docker-hub/repository-name>
+
+4. Run and Publish the App on EC2 via SSH
+    
+        sudo docker run -d --rm -p 80:80 <docker-hub/repository-name>
+        sudo ps
+
+5. Copy the address of the app on the AWS console (IPv4 Public IP) and test on the browser if the page is running
+
+![Alt text](images/m9_images/ipv4-public-ip.png)
+
+6. Configure the security group (Inbound rules)
+
+![Alt text](images/m9_images/securit-group.png)
+
+
 
 
 
