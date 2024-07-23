@@ -655,17 +655,94 @@
 
 ![Alt text](images/m9_images/securit-group.png)
 
+## M2_Kubernetes_Setup_and_Installation
+
+### [Install kubectl binary with curl on Linux](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/)
+
+    # Download the latest release with the command:
+    curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+
+    # Validate the binary
+    curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl.sha256"
+
+    # Validate the kubectl binary against the checksum file:
+    echo "$(cat kubectl.sha256)  kubectl" | sha256sum --check
+
+    # Install kubectl
+    sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+    # Test to ensure the version you installed is up-to-date:
+    # Or use this for detailed view of version:
+    kubectl version --client --output=yaml
+
+
+### [minikube start](https://minikube.sigs.k8s.io/docs/start/?arch=%2Flinux%2Fx86-64%2Fstable%2Fbinary+download)
+
+    # To install the latest minikube stable release on x86-64 Linux using binary download:
+
+    curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+
+    sudo install minikube-linux-amd64 /usr/local/bin/minikube && rm minikube-linux-amd64
+
+    # Start your cluster:
+    minikube start
+
+    # Interact with your cluster:
+    kubectl get po -A
+
+    #minikube can download the appropriate version of kubectl and you should be able to use it like this:
+
+    minikube kubectl -- get po -A
+
+    You can also make your life easier by adding the following to your shell config: 
+
+    alias kubectl="minikube kubectl --"
+
+    # additional insight into your cluster state, minikube bundles the Kubernetes Dashboard:
+
+    minikube dashboard
+    # To terminate:
+    ctrl command + C 
 
 
 
+![Alt text](images/m12_images/kubernetes-dashboard.png)
+
+#### Deployment using imperative approach
+
+- checking if cluster is up and running
+
+![Alt text](images/m12_images/cluster-status.png)
+
+- if cluster not running then run the command:
+
+        minikube start --driver=docker
+
+- Sending instruction to the master node/ control plane to create a new deployment object:
+
+        kubectl create deployment <deployment-name> --image=<image-name>
+
+        kubectl get deployment
+
+        kubectl get pods
+
+        kubectl deployment delete first-app
+
+- create a repository in docker hub
+
+        docker tag <image-name> <dockerhub/repository-name>
+
+        docker push <dockerhub/repository-name>
 
 
+![Alt text](images/m12_images/pushing-dockerhub.png)
 
+![Alt text](images/m12_images/get-deployment.png)
 
+![Alt text](images/m12_images/get-pods.png)
 
+![Alt text](images/m12_images/workload-status.png)
 
-
-
+![Alt text](images/m12_images/workloads.png)
 
 
 
