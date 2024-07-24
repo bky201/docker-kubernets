@@ -655,7 +655,7 @@
 
 ![Alt text](images/m9_images/securit-group.png)
 
-## M2_Kubernetes_Setup_and_Installation
+## M12_Kubernetes_Setup_and_Installation
 
 ### [Install kubectl binary with curl on Linux](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/)
 
@@ -707,6 +707,8 @@
 
 ![Alt text](images/m12_images/kubernetes-dashboard.png)
 
+#### The "Deployment" object
+
 #### Deployment using imperative approach
 
 - checking if cluster is up and running
@@ -743,6 +745,113 @@
 ![Alt text](images/m12_images/workload-status.png)
 
 ![Alt text](images/m12_images/workloads.png)
+
+#### The "Service" object 
+- Create a service (exposing deployment with a service)
+
+![Alt text](images/m12_images/create-service.png)
+
+- verify service was created
+
+![Alt text](images/m12_images/check-services.png)
+
+![Alt text](images/m12_images/start-service.png)
+
+#### Scaling in Action
+
+![Alt text](images/m12_images/scale-pod.png)
+
+![Alt text](images/m12_images/scale-pod1.png)
+
+#### Updating Depoyments
+
+![Alt text](images/m12_images/update-deployment1.png
+
+![Alt text](images/m12_images/update-deployment2.png)
+
+- Update deployment
+
+![Alt text](images/m12_images/update-deployment3.png.png)
+
+-Rebuild image with tag
+
+![Alt text](images/m12_images/update-deployment4.png)
+
+- push image
+
+![Alt text](images/m12_images/update-deployment5.png)
+
+- Update deployment
+
+![Alt text](images/m12_images/update-deployment6.png)
+
+- check status
+
+![Alt text](images/m12_images/update-deployment7.png)
+
+![Alt text](images/m12_images/update-deployment8.png)
+
+#### Deployment Rollbacks and History
+
+- update a deployment with wrong image
+
+![Alt text](images/m12_images/rollback1.png)
+
+
+![Alt text](images/m12_images/rollback2.png)
+
+- dashboard status error on Pod 
+
+![Alt text](images/m12_images/rollback3.png)
+
+- Rollback and terminate the Pod
+
+![Alt text](images/m12_images/rollback4.png)
+
+- To list history of older deployment
+
+![Alt text](images/m12_images/rollback5.png)
+
+- Get more detail on Rollback to older deployment
+
+![Alt text](images/m12_images/rollback6.png)
+
+- Rollback to older deployment
+
+![Alt text](images/m12_images/rollback7.png)
+
+- Delete Service and deployment first-app
+
+![Alt text](images/m12_images/delete-service-deployment.png)
+
+## M12.1_Kubernetes_Declarative_approach
+
+- Running a deployment 
+
+![Alt text](images/m12_images/declarative-deployment.png)
+
+- Running a service
+
+![Alt text](images/m12_images/declarative-service.png)
+
+- Expose a service
+
+![Alt text](images/m12_images/expose-service1.png)
+
+![Alt text](images/m12_images/expose-service2.png)
+
+- To delete deployed resources and services
+
+![Alt text](images/m12_images/delete-declarative-service-deployment.png)
+
+#### Multiple Configuration
+
+![Alt text](images/m12_images/multiple-config.png)
+
+
+
+
+
 
 
 
