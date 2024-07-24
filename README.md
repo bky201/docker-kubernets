@@ -849,6 +849,42 @@
 ![Alt text](images/m12_images/multiple-config.png)
 
 
+## M13_Managing_Data_and_Volumes_with_Kubernetes
+
+- Starting a project using docker compose file
+
+![Alt text](images/m13_images/story-docker-container.png)
+
+#### Creating new Deployment and Service
+
+- build image
+
+![Alt text](images/m13_images/story-image.png)
+
+- push image to dockerhub
+
+![Alt text](images/m13_images/push-image.png)
+
+- minikube vertual machine should be up and running
+
+![Alt text](images/m13_images/minikube-status.png)
+
+- Run Deployment and Services
+
+![Alt text](images/m13_images/deployment-and-services.png)
+
+- Reach to deployment service by running:
+
+![Alt text](images/m13_images/minikube-service.png)
+
+#### AFirst Volume: The "emptyDir" type
+
+![Alt text](images/m13_images/emptdir-volume1.png)
+
+![Alt text](images/m13_images/emptdir-volume2.png)
+
+![Alt text](images/m13_images/emptdir-volume3.png)
+
 
 
 
