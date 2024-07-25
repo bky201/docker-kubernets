@@ -877,13 +877,79 @@
 
 ![Alt text](images/m13_images/minikube-service.png)
 
-#### AFirst Volume: The "emptyDir" type
+#### A First Volume: The "emptyDir" type
 
 ![Alt text](images/m13_images/emptdir-volume1.png)
 
 ![Alt text](images/m13_images/emptdir-volume2.png)
 
 ![Alt text](images/m13_images/emptdir-volume3.png)
+
+
+#### A Second Volume: The "hostPath" type
+
+- build image
+
+![Alt text](images/m13_images/story-image.png)
+
+- push image to dockerhub
+
+![Alt text](images/m13_images/push-image.png)
+
+- minikube vertual machine should be up and running
+
+![Alt text](images/m13_images/minikube-status.png)
+
+- Run Deployment and Services
+
+![Alt text](images/m13_images/deployment-and-services1.png)
+
+![Alt text](images/m13_images/get-pods.png)
+
+- Reach to deployment service by running:
+
+![Alt text](images/m13_images/minikube-service1.png)
+
+#### Defining a Persistent Volume
+
+![Alt text](images/m13_images/persistent-volume.png)
+
+#### Creating a Persistent Volume Claim
+
+![Alt text](images/m13_images/persistent-volume-claim.png)
+
+- Add Persistent volume to deployment.yaml file under volumes
+
+![Alt text](images/m13_images/deployment-persistent-volume.png)
+
+#### Using a Claim in a Pod
+
+![Alt text](images/m13_images/pod-persistent-volume.png)
+
+- List all persistent volumes
+
+![Alt text](images/m13_images/list-pv.png)
+
+- List all claim
+
+![Alt text](images/m13_images/list-pvc.png)
+
+#### Environment Variables
+
+- Add file path 
+
+![Alt text](images/m13_images/file_path.png)
+
+- Add environment inside deployment configuration
+
+![Alt text](images/m13_images/environment-deployment.png)
+
+- Run resources
+
+![Alt text](images/m13_images/environment1.png)
+
+
+
 
 
 
