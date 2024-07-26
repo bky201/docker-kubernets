@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tasks-deployment
+spec: 
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tasks
+  template:
+    metadata:
+      labels:
+        app: tasks
+    spec:
+      containers:
+        - name: tasks
+          image: mohbekmoh/kub-task:latest
+          env:
+            - name: AUTH_ADDRESS
+              # value: localhost
+              # value: 10.99.211.254
+              value: "auth-service.default"
+            - name: TASKS_FOLDER
+              value: tasks
+        # - name: auth
+        #   image: mohbekmoh/kub-auth:latest
+      volumes:
+        - name: tasks-volume
+          hostPath:
+            path: /tasks
+            type: DirectoryOrCreate

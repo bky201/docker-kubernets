@@ -949,6 +949,133 @@
 ![Alt text](images/m13_images/environment1.png)
 
 
+## M14_Kubernetes_and_Networking
+
+#### Creating First Deployment
+
+- build image for use-api
+
+![Alt text](images/m14_images/user-api-image.png)
+
+![Alt text](images/m14_images/user-api-image-push.png)
+
+- make sure minikube is up and running
+
+![Alt text](images/m14_images/minikube-status.png)
+
+- run deployment 
+
+![Alt text](images/m14_images/run-deployment.png)
+
+- create a serivce 
+
+![Alt text](images/m14_images/create-service.png)
+
+#### Multiple Containers in One Pod
+
+- create a repository for auth-api image
+
+![Alt text](images/m14_images/auth-api-repository.png)
+
+- build and push an image for auth-api
+
+![Alt text](images/m14_images/auth-api-image1.png)
+
+![Alt text](images/m14_images/auth-api-image2.png)
+
+- build a container for auth-api
+
+![Alt text](images/m14_images/multi-container1.png)
+
+![Alt text](images/m14_images/multi-container2.png)
+
+#### Verify Post request using Postman
+
+![Alt text](images/m14_images/signup-request.png)
+
+![Alt text](images/m14_images/login-request.png)
+
+#### Creating Multiple Deployments
+
+![Alt text](images/m14_images/multiple-deployment1.png)
+
+![Alt text](images/m14_images/multiple-deployment2.png)
+
+![Alt text](images/m14_images/multiple-deployments.png)
+
+#### Pod to Pod Communication with IP-Addresses ans Enivironment Variables
+
+- Inside users-app.js update with automatically generated kubernetes environment variable
+
+![Alt text](images/m14_images/pod-to-pod1.png)
+
+- update users-deployment.yml with internal cluster ip 
+
+![Alt text](images/m14_images/pod-to-pod2.png)
+
+- Add environment variables to docker-compose file
+
+![Alt text](images/m14_images/pod-to-pod3.png)
+
+- Creating tasks-api image
+
+- Update tasks-apa.js
+
+![Alt text](images/m14_images/tasks-api1.png)
+
+- Docker-compose tasks configuration
+
+![Alt text](images/m14_images/tasks-api2.png)
+
+- Set environment variables in tasks-deployment.yml configuration
+
+![Alt text](images/m14_images/tasks-api5.png)
+
+- run deployment
+
+![Alt text](images/m14_images/tasks-api3.png)
+
+![Alt text](images/m14_images/tasks-api4.png)
+
+- Verify task has been created
+
+![Alt text](images/m14_images/tasks-api6.png)
+
+#### Adding a Containerized Frontend
+
+- Build docker image
+
+![Alt text](images/m14_images/frontend1.png)
+
+- Run frontend docker container on localhost machine
+
+![Alt text](images/m14_images/frontend2.png)
+
+- rebuild tasks docker image and run new deployment
+
+![Alt text](images/m14_images/frontend4.png)
+
+- Fetching Tasks
+
+![Alt text](images/m14_images/frontend5.png)
+
+#### Deploying the Frontend with Kubernetes
+
+- Create docker hub repository and push docker image
+
+![Alt text](images/m14_images/frontend6.png)
+
+#### Using a Reverse Proxy for the Frontend
+
+![Alt text](images/m14_images/proxy1.png)
+
+![Alt text](images/m14_images/proxy2.png)
+
+![Alt text](images/m14_images/proxy3.png)
+
+
+
+
 
 
 
